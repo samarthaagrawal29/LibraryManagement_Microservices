@@ -1,4 +1,4 @@
-const { createOrder } = require('../controllers');
+const { createOrder, deleteOrderByID, getOrderByID, listOfOrder } = require('../controllers');
 
 const router = require('express').Router();
 
@@ -7,6 +7,10 @@ router.get('/', async (req, res, next) => {
     return next();
 });
 
-router.post('/createOrder', createOrder)
+router.post('/createOrder', createOrder);
+router.get('/listOfOrder', listOfOrder);
+router.get('/getOrderByID', getOrderByID);
+router.delete('/deleteOrderByID', deleteOrderByID);
+
 
 module.exports = router;
