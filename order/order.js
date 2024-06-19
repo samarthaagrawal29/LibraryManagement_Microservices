@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 app.use(bodyParser.json());
 app.use("/api", router);
-//Connect Mongoose
+
 try {
     mongoose.connect(`mongodb://localhost:27017/order`);
     console.log("MongoDB Connected Successfully");

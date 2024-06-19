@@ -12,8 +12,7 @@ const listOfBooks = async (req, res, next) => {
         res.send("No Book Available at the moment!");
     }
   } catch (error) {
-    console.log(error);
-    res.send("Something Went Wrong Try fter Sometime!!")
+    res.send("Something Went Wrong Try after Sometime!!")
   }  
 };
 

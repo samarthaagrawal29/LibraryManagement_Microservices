@@ -13,7 +13,6 @@ const createABook = async (req, res, next) => {
   });
 
   book.save().then(() => {
-    console.log("Book Created Successfully!!");
     res.send("Book Created Successfully!!");
   }).catch((err) => {
     if (err) {

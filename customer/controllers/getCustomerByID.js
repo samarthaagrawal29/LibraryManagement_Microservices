@@ -8,16 +8,13 @@ const getCustomerByID = async (req, res, next) => {
   const { id } = req.query;
   if (!id) {
     res.status(404).send("Customer Id Doesn't Exist's");
-    return next();
   }
   try {
     let customer = await Customer.findById(`${id}`);
     if (customer) {
       res.json(customer);
-      return next();
     } else {
       res.sendStatus(404);
-      return next();
     }
   } catch (error) {
     console.log(

@@ -12,14 +12,12 @@ const deleteOrderByID = async (req, res, next) => {
     const response = await Order.findByIdAndDelete(`${id}`);
     if (response) {
       res.send("Order Deleted Successfully !!");
-      return next();
     } else {
       res
         .status(401)
         .send(
           "Soemthing Went Wrong While Deleting the Order Data Please try again later!!"
         );
-      return next();
     }
   } catch (error) {
     console.log("Something Wrong In Delete Order By ID Controller");

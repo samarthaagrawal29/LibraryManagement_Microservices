@@ -8,7 +8,7 @@ const bodyPraser = require("body-parser");
 //Load Mongoose
 const mongoose = require("mongoose");
 
-//connect mngoose
+//connect mongoose
 try {
   mongoose.connect(
     `mongodb://localhost:27017/customer`

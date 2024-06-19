@@ -9,25 +9,21 @@ const createOrder = async (req, res, next) => {
     res
       .status(404)
       .send("Some Details is Missing, please fill All the details!");
-    return next();
   }
  
   try {
-    console.log("helo");
     const newOrder = {
       customerID: `${customerID}`,
       bookID: `${bookID}`,
       initialDate: initialDate,
       deliveryDate: deliveryDate,
     };
-    console.log(newOrder);
     const order = new Order(newOrder);
     const response = await order.save();
     if (response) {
       res.status(201).json(response);
     } else {
       res.status(500).send("Somthing Went Wrong!!");
-      return next();
     }
   } catch (error) {
     console.log("Some Error occur in Create Order Fuction");

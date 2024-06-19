@@ -9,7 +9,6 @@ const createCustomer = async (req, res, next) => {
     res
       .status(404)
       .send("Some Details is Missing, please fill All the details!");
-    return next();
   }
   try {
     const newCustomer = {
@@ -23,7 +22,6 @@ const createCustomer = async (req, res, next) => {
         res.status(201).json(response);
     } else {
         res.status(500).send("Somthing Went Wrong!!");
-        return next();
     }
   } catch (error) {
     console.log("Some Error occur in Create Customer Fuction");

@@ -8,10 +8,8 @@ const listOfOrder = async (req, res, next) => {
         let listOfOrder = await Order.find();
         if(listOfOrder) {
             res.status(200).json(listOfOrder);
-            return next();
         } else {
             res.send("No Order Data Is Available at this moment!");
-            return next();
         }
     } catch (error) {
         console.log("Somthing Went Wrong in - listOfOrder Funtion");

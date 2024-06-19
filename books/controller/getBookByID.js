@@ -6,14 +6,12 @@ const Book = mongoose.model('Book');
 const getBookByID = async (req, res, next) => {
     const { id } = req.query;
     if (!id) {
-        res.status(404).send("Book Id Doesn't Exist's")
-        return next();
+        res.status(404).send("Book Id Doesn't Exist's");
     }
     try {
         let book = await Book.findById(`${id}`);
         if (book) {
             res.json(book);
-            return next();
         } else {
             res.sendStatus(404);
         }

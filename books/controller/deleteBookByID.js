@@ -12,10 +12,8 @@ const deleteBookByID = async (req, res, next) => {
     const response = await Book.findByIdAndDelete(`${id}`);
     if(response) {
         res.send("Book Deleted Successfully !!");
-        return next();
     } else {
         res.status(401).send("Soemthing Went Wrong While Deleting the book Please try again later!!");
-        return next();
     }
   } catch (error) {
     console.log("Something Wrong In Delete Book By ID Controller");
