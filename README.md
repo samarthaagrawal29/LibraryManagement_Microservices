@@ -42,7 +42,7 @@ npm run watch
 
 ## Tech Stack Used
 
-- Node.js, Express.js, Microservices Architecture, MongoDB
+- Node.js, Express.js, Microservices Architecture, MongoDB, Docker, Nginx
 
 ## Future Scope
 
