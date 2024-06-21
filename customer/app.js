@@ -11,7 +11,7 @@ const mongoose = require("mongoose");
 //connect mongoose
 try {
   mongoose.connect(
-    `mongodb://localhost:27017/customer`
+    `mongodb+srv://agrawalsamarth2903:L5t4KZJnG4sXKJTG@cluster0.qlfz9ef.mongodb.net/customer?retryWrites=true&w=majority&appName=Cluster0`
   );
   console.log("MongoDB Connected Successfully");
 } catch (error) {
@@ -26,6 +26,6 @@ app.get("/", (req, res, next) => {
   next();
 });
 
-app.listen(1002, () => {
+app.listen(4002, () => {
   console.log(`The Server is Up - This is our Customer Service`);
 });

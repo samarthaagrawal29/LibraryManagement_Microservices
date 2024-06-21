@@ -17,8 +17,8 @@ const getOrderByID = async (req, res, next) => {
         if (orderDetails) {
             let customerID = orderDetails?.customerID.toHexString();
             let bookID = orderDetails?.bookID.toHexString();
-            let bookDetails = (await axios.get(`http://localhost:1001/api/getBookByID?id=${bookID}`)).data;
-            let customerDetails = (await axios.get(`http://localhost:1002/api/getCustomerByID?id=${customerID}`))?.data;
+            let bookDetails = (await axios.get(`http://localhost:4001/api/getBookByID?id=${bookID}`)).data;
+            let customerDetails = (await axios.get(`http://localhost:4002/api/getCustomerByID?id=${customerID}`))?.data;
             if (bookDetails && customerDetails) {
                 const response = {
                     orderID: orderDetails._id,
